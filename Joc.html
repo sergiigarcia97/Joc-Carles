@@ -18,47 +18,49 @@
 <body background="img/wall.png">
 <!-- Aqui hem creat un contenidor "div" que és diu header on anira tot el text de la part superior -->
     <div class="header">
-      <p>Hyper RPG</p>
-      <h2>Selecciona el personaje!</h2>
+      <h3 class="titol">Choose your character!</h3>
     </div>
-
-    <div class="interface">
+    <div class="interface" id="Player">
 <!-- Aqui hem creat un contenidor "div" que és diu interface on anira la part més important del joc -->
-          <a href="#" onclick="GameManager.setGameStart('Warrior')">
-            <img src="img\warrior.jpg" alt="Warrior">
-          </a>
-          <div>
-              <h3>Warrior</h3>
-              <p>Warriors have higher health and stamina.</p>
-          </div>
-
-          <a href="#" onclick="GameManager.setGameStart('Rogue')">
-              <img src="img\rogue.jpg" alt="Rogue">
-          </a>
-          <div>
-              <h3>Rogue</h3>
-              <p>Rogues are fast and have high stamina.</p>
-          </div>
-
-          <a href="#" onclick="GameManager.setGameStart('Mage')">
-              <img src="img\mage.jpg" alt="Mage">
-          </a>
-          <div>
-              <h3>Mage</h3>
-              <p>Mages are inteligent and do all the attacks with spells</p>
-          </div>
-
-          <a href="#" onclick="GameManager.setGameStart('Hunter')">
-            <img src="img\hunter.jpg" alt="Hunter">
-          </a>
-          <div>
-            <h3>Hunter</h3>
-            <p>Hunters are fast and strong.</p>
+<!-- cuan carrega pagina posar stats pj i al fer click mostrar botor enter dungeon // posar carrousel -->
+        <div class="Character" onclick="GameManager.setGameStart('Warrior')">
+            <a href="#" >
+              <img src="img\warrior.jpg" alt="Warrior" class="imgCharacter">
+            </a>
+            <div class="textCharacter">
+                <h3 class="titolCharacter">Warrior</h3>
+                <p>Warriors have higher health and stamina.</p>
+            </div>
+        </div>
+        <div class="Character" onclick="GameManager.setGameStart('Rogue')">
+            <a href="#" onclick="GameManager.setGameStart('Rogue')">
+                <img src="img\rogue.jpg" alt="Rogue" class="imgCharacter">
+            </a>
+            <div class="textCharacter">
+                <h3 class="titolCharacter">Rogue</h3>
+                <p>Rogues are fast and have high stamina.</p>
+            </div>
+        </div>
+        <div class="Character" onclick="GameManager.setGameStart('Mage')">
+            <a href="#" onclick="GameManager.setGameStart('Mage')">
+                <img src="img\mage.jpg" alt="Mage" class="imgCharacter">
+            </a>
+            <div class="textCharacter">
+                <h3 class="titolCharacter">Mage</h3>
+                <p>Mages are inteligent and do all the attacks with spells</p>
+            </div>
+        </div>
+        <div class="Character" onclick="GameManager.setGameStart('Hunter')">
+            <a href="#" onclick="GameManager.setGameStart('Hunter')">
+              <img src="img\hunter.jpg" alt="Hunter" class="imgCharacter">
+            </a>
+            <div class="textCharacter">
+              <h3 class="titolCharacter">Hunter</h3>
+              <p>Hunters are fast and strong.</p>
+            </div>
           </div>
     </div>
-    <div class="arena">
 
-    </div>
 
     <div class="actions">
 

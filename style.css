@@ -1,0 +1,41 @@
+body{
+  background-color: black;
+  color: white;
+}
+.header{
+  text-align: center;
+  border: gold 10px inset;
+  background-image: url("img/wall1.png");
+}
+.titol{
+  font-size: 30px;
+}
+.interface{
+  width:1600px;
+  height:750px;
+  margin:50px auto;
+}
+    .Character{
+      width:750px;
+      height:300px;
+      float:left;
+      margin:10px;
+      cursor:pointer;
+      background-color:brown;
+    }
+    .Character:hover{
+      background-color:#5867D2;
+    }
+        .imgCharacter{
+          width:300px;
+
+        }
+        .titolCharacter{
+          color: rgb(255,140,0);
+          width: 400px;
+
+        }
+        .textCharacter{
+          margin:auto;
+
+        }

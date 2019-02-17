@@ -1,0 +1,61 @@
+  <!-- té id Player y class interface pel funcionament del joc -->
+  <!-- Aqui hem creat un contenidor "div" que és diu interface on anira la part més important del joc -->
+  <!-- cuan carrega pagina posar stats pj i al fer click mostrar botor enter dungeon -->
+  <div id="Player" class="carousel slide interface" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <!-- tants li(element de la llista) com personatges a escollir -->
+      <li data-target="#Player" data-slide-to="0" class="active"></li>
+      <li data-target="#Player" data-slide-to="1"></li>
+      <li data-target="#Player" data-slide-to="2"></li>
+      <li data-target="#Player" data-slide-to="3"></li>
+    </ol>
+    <!-- Contenidor general carrousel -->
+    <div class="carousel-inner">
+      <!-- Comença 1er personatge -->
+      <div class="carousel-item Characterv2 active" onclick="GameManager.setGameStart('Warrior')">
+        <img src="img\warrior.jpg" alt="Warrior" class="imgCharacter">
+        <div class="carousel-caption d-none d-md-block">
+          <div class="textCharacter">
+              <h3 class="titolCharacter">Warrior</h3>
+              <p>Warriors have higher health and stamina.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Acaba 1er personatge -->
+      <div class="carousel-item Characterv2" onclick="GameManager.setGameStart('Rogue')">
+        <img src="img\rogue.jpg" alt="Rogue" class="imgCharacter">
+        <div class="carousel-caption d-none d-md-block">
+          <div class="textCharacter">
+              <h3 class="titolCharacter">Rogue</h3>
+              <p>Rogues are fast and have high stamina.</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item Characterv2" onclick="GameManager.setGameStart('Mage')">
+        <img src="img\mage.jpg" alt="Mage" class="imgCharacter">
+        <div class="carousel-caption d-none d-md-block">
+          <div class="textCharacter">
+              <h3 class="titolCharacter">Mage</h3>
+              <p>Mages are inteligent and do all the attacks with spells</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item Characterv2" onclick="GameManager.setGameStart('Hunter')">
+        <img src="img\hunter.jpg" alt="Hunter" class="imgCharacter">
+        <div class="carousel-caption d-none d-md-block">
+          <div class="textCharacter">
+            <h3 class="titolCharacter">Hunter</h3>
+            <p>Hunters are fast and strong.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#Player" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#Player" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>

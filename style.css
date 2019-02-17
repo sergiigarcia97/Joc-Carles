@@ -32,10 +32,17 @@ body{
         }
         .titolCharacter{
           color: rgb(255,140,0);
-          width: 400px;
-
         }
         .textCharacter{
-          margin:auto;
-
-        }
+               width:425px;
+               text-align:center;
+               float:right;
+             }
+ .Characterv2{
+   width:1400px;
+   height:300px;
+   float:left;
+   margin:10px;
+   cursor:pointer;
+   background-color:brown;
+ }

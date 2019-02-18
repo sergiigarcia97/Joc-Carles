@@ -18,8 +18,7 @@
 <body background="img/wall.png">
 <!-- Aqui hem creat un contenidor "div" que és diu header on anira tot el text de la part superior -->
     <div class="header">
-      <p>Hyper RPG</p>
-      <h2>Selecciona el personaje!</h2>
+      <h2 class="headerText">CHOOSE YOUR HERO!</h2>
     </div>
 
     <div class="interface">
@@ -28,29 +27,56 @@
               <img src="img\warrior.jpg" alt="Warrior" class="imgCharacter">
               <div class="textCharacter">
                   <h3 class="titolCharacter">Warrior</h3>
-                  <p>Warriors have higher health and stamina.</p>
-                  <p>Health:200</p>
+                      <div class="textDescripcio">
+                          <p>Warriors have higher health and stamina.</p>
+                          <p>Health:200</p>
+                          <p>Mana:0</p>
+                          <p>Strength:200</p>
+                          <p>Agility:100</p>
+                          <p>Speed:50</p>
+                      </div>      
               </div>
           </div>
           <div class="Character" onclick="GameManager.setGameStart('Rogue')">
               <img src="img\rogue.jpg" alt="Rogue" class="imgCharacter">
               <div class="textCharacter">
                   <h3 class="titolCharacter">Rogue</h3>
-                  <p>Rogues are fast and have high stamina.</p>
+                      <div class="textDescripcio">
+                          <p>Rogues are fast and have high stamina.</p>
+                          <p>Health:100</p>
+                          <p>Mana:0</p>
+                          <p>Strength:100</p>
+                          <p>Agility:150</p>
+                          <p>Speed:200</p>
+                      </div>  
               </div>
           </div>
           <div class="Character" onclick="GameManager.setGameStart('Mage')">
               <img src="img\mage.jpg" alt="Mage" class="imgCharacter">
               <div class="textCharacter">
                   <h3 class="titolCharacter">Mage</h3>
-                  <p>Mages are inteligent and do all the attacks with spells</p>
+                      <div class="textDescripcio">
+                          <p>Mages are inteligent and do all the attacks with spells</p>
+                          <p>Health:80</p>
+                          <p>Mana:0</p>
+                          <p>Strength:50</p>
+                          <p>Agility:200</p>
+                          <p>Speed:50</p>
+                      </div>         
               </div>
           </div>
           <div class="Character" onclick="GameManager.setGameStart('Hunter')">
               <img src="img\hunter.jpg" alt="Hunter" class="imgCharacter">
               <div class="textCharacter">
                 <h3 class="titolCharacter">Hunter</h3>
-                <p>Hunters are fast and strong.</p>
+                       <div class="textDescripcio">
+                          <p>Hunters are fast and strong.</p>
+                          <p>Health:200</p>
+                          <p>Mana:0</p>
+                          <p>Strength:50</p>
+                          <p>Agility:200</p>
+                          <p>Speed:100</p>
+                      </div>  
               </div>
           </div>
           </div>

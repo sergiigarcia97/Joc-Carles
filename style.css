@@ -5,8 +5,13 @@ body{
 .header{
   text-align: center;
   border: gold 10px inset;
-  background-image: url("img/wall1.png");
+  background-color: #690000;
+  font-size: 30px;
+  height: 100px;
 }
+    .headerText{
+        margin-top: 22px;
+    }
 .titol{
   font-size: 30px;
 }
@@ -32,17 +37,55 @@ body{
         }
         .titolCharacter{
           color: rgb(255,140,0);
+          text-align: center;
+          border: gold 7px inset;
+          background-color: #690000;
+          margin-right: 20px;
         }
         .textCharacter{
                width:425px;
-               text-align:center;
                float:right;
              }
+.textDescripcio{
+    float: left
+}
  .Characterv2{
    width:1400px;
-   height:300px;
-   float:left;
-   margin:10px;
+   height:750px;
+   margin:auto;
    cursor:pointer;
    background-color:brown;
  }
+     .imgCharacterv2{
+       width: 750px;
+
+     }
+     .titolCharacterv2{
+       color: rgb(255,140,0);
+       text-align: center;
+       border: gold 7px inset;
+       margin-right: 20px;
+       background-color: #690000;
+     }
+     .textCharacterv2{
+            height: 750px;
+            font-size: 30px;
+            float: right;
+          }
+.taskHeader{
+    margin-top: 22px;
+}
+.btn-prefight{
+    width: 700px;
+    height: 50px;
+    border: gold 7px inset;
+    background-color: #690000;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    margin-right: 375px;
+
+}
+    .btn-prefight:hover{
+        background-color:#5867D2;
+    }

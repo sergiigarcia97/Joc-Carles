@@ -23,16 +23,19 @@ let GameManager = {
         let getInterface = document.querySelector(".interface");
         //Aquesta linia ens serveix per escriure els stats a la pagina, realment és HTML que hem ficat amb el innerHTML
         getInterface.innerHTML ='<div class="Characterv2">'
-            +'<img src="img\\' + classType.toLowerCase() + '.jpg" alt="'+classType+'" class="imgCharacter">'
-            +'<div class="textCharacter">'
-                +'<h3 class="titolCharacter">'+classType+'</h3>'
-                +'<div class="attrCharacter">'
+            +'<img src="img\\' + classType.toLowerCase() + '.jpg" alt="'+classType+'" class="imgCharacterv2">'
+            +'<div class="textCharacterv2">'
+                +'<h3 class="titolCharacterv2">'+classType+'</h3>'
+                +'<div class="attrCharacterv2">'
                     +'<p>Health: ' + player.health + '</p>'
                     +'<p>Mana: ' + player.mana + '</p>'
                     +'<p>Strength: ' + player.strength + '</p>'
                     +'<p>Agility: ' + player.agility + '</p>'
                     +'<p>Speed: ' + player.speed + '</p>'
                 +'</div>'
+                    +'<div>'
+                        +'<a href="#" class="btn-prefight" onclick="GameManager.setFight">Enter the dungeon</a>'
+                    +'</div>'
             +'</div>'
         +'</div>';
     },
@@ -42,9 +45,9 @@ let GameManager = {
       let getActions = document.querySelector(".actions");
       let getArena = document.querySelector(".arena");
       //Aqui canviem el text del header
-      getHeader.innerHTML = '<p>Task: Find an enemy!</p>';
+      getHeader.innerHTML = '<h2 class="taskHeader">TASK: KILL THE BOSS!</h2>';
       //Aqui creem un boto dintre del div actions, aquest boto servirá per començar el joc.
-      getActions.innerHTML = '<a href="#" class="btn-prefight" onclick="GameManager.setFight">Enter the dungeon</a>';
+      //getActions.innerHTML = '<a href="#" class="btn-prefight" onclick="GameManager.setFight">Enter the dungeon</a>';
       getArena.style.visibility = "visible";
     },
     setFight: function() {

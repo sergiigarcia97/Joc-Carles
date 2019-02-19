@@ -58,19 +58,23 @@ body{
  }
      .imgCharacterv2{
        width: 750px;
-
+       float: left;
      }
      .titolCharacterv2{
+       width: 80%;
+       margin: 5% auto;
        color: rgb(255,140,0);
        text-align: center;
        border: gold 7px inset;
-       margin-right: 20px;
        background-color: #690000;
      }
      .textCharacterv2{
             height: 750px;
             font-size: 30px;
+            text-align: center;
             float: right;
+            width: 650px;
+            margin: auto;
           }
 .taskHeader{
     margin-top: 22px;
@@ -83,9 +87,8 @@ body{
     font-size: 30px;
     color: white;
     text-align: center;
-    margin-right: 375px;
 
 }
     .btn-prefight:hover{
-        background-color:#5867D2;
+        background-color: #5867D2;
     }

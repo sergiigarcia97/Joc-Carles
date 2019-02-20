@@ -54,5 +54,10 @@ let GameManager = {
       let getHeader = document.querySelector(".header");
       let getActions = document.querySelector(".actions");
       let getEnemy = document.querySelector(".enemy");
+      // Crea un enemic aleatori
+      let enemy00 = new Enemy("Goblin", 100, 0, 50, 100, 100);
+      let enemy01 = new Enemy("Orc", 200, 0, 120, 50, 80);
+      var chooseRandomEnemy = Math.floor((Math.random() * 10) + 1);
+      console.log(chooseRandomEnemy);
     }
 }

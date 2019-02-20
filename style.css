@@ -1,3 +1,11 @@
+@charset "utf-8";
+        @font-face{
+            font-family:"minecraft";
+            src:url('Minecraft.ttf');
+        }
+html{
+    font-family:"minecraft";
+}
 body{
   background-color: black;
   color: white;
@@ -71,7 +79,7 @@ body{
      .textCharacterv2{
             height: 750px;
             font-size: 30px;
-            text-align: center;
+            text-align: left;
             float: right;
             width: 650px;
             margin: auto;
@@ -87,6 +95,7 @@ body{
     font-size: 30px;
     color: white;
     text-align: center;
+    box-sizing: 700px;
 
 }
     .btn-prefight:hover{

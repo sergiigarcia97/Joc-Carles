@@ -33,9 +33,6 @@ let GameManager = {
                     +'<p>Agility: ' + player.agility + '</p>'
                     +'<p>Speed: ' + player.speed + '</p>'
                 +'</div>'
-                  //  +'<div>'
-                    //    +'<a href="#" class="btn-prefight" onclick="GameManager.setFight">Enter the dungeon</a>'
-                  //  +'</div>'
             +'</div>'
         +'</div>';
     },
@@ -47,7 +44,7 @@ let GameManager = {
       //Aqui canviem el text del header
       getHeader.innerHTML = '<h2 class="taskHeader">TASK: KILL THE BOSS!</h2>';
       //Aqui creem un boto dintre del div actions, aquest boto servirá per començar el joc.
-      getActions.innerHTML = '<a href="#" class="btn-prefight" onclick="GameManager.setFight()">Enter the dungeon</a>';
+      getActions.innerHTML = '<a class="btn-prefight" onclick="GameManager.setFight()">Enter the dungeon</a>';
       getArena.style.visibility = "visible";
     },
     setFight: function() {
@@ -57,7 +54,7 @@ let GameManager = {
       // Crea un enemic aleatori
       let enemy00 = new Enemy("Goblin", 100, 0, 50, 100, 100);
       let enemy01 = new Enemy("Orc", 200, 0, 120, 50, 80);
-      var chooseRandomEnemy = Math.floor((Math.random() * 3) + 1);
+      var chooseRandomEnemy = (Math.floor(Math.random() * (2 - 0)) + 0);
       console.log(chooseRandomEnemy);
     }
 }

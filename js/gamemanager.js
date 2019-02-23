@@ -55,6 +55,5 @@ let GameManager = {
       let enemy00 = new Enemy("Goblin", 100, 0, 50, 100, 100);
       let enemy01 = new Enemy("Orc", 200, 0, 120, 50, 80);
       var chooseRandomEnemy = (Math.floor(Math.random() * (2 - 0)) + 0);
-      console.log(chooseRandomEnemy);
     }
 }

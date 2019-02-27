@@ -52,8 +52,21 @@ let GameManager = {
       let getActions = document.querySelector(".actions");
       let getEnemy = document.querySelector(".enemy");
       // Crea un enemic aleatori
-      let enemy00 = new Enemy("Goblin", 100, 0, 50, 100, 100);
+      let enemy00 = new Enemy("orc", 100, 0, 50, 100, 100);
       let enemy01 = new Enemy("Orc", 200, 0, 120, 50, 80);
       var chooseRandomEnemy = (Math.floor(Math.random() * (2 - 0)) + 0);
+      console.log(chooseRandomEnemy);
+        switch(chooseRandomEnemy) {
+            case 0:
+                enemy = enemy00;
+                break;
+            case 1:
+                enemy = enemy01;
+                break;
+        }
+        document.getElementById('enemic').innerHTML = '<img src="img/' + enemy.enemyType.toLowerCase() + '.jpg" class="imgEnemy" alt="' + enemy.enemyType + '"class="img-avatar"><div><h3 class="titolEnemy">' + enemy.enemyType + '</h3><div class="textEnemy"<p class="health-enemy">Health: ' + enemy.health +'</p><p>Mana: ' + enemy.mana + '</p><p>Strength: ' + enemy.strength + '</p><p>Agility: ' + enemy.agility + '</p><p>Speed: ' + enemy.speed + '</p></div>';
+        getHeader.innerHTML = 'WHAT YOU WANNA DO?';
+        getActions.innerHTML = '<a class="btn-fight" onclick="PlayerMoves.calcAttack()">ATTACK!</a>';
+        
     }
 }

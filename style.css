@@ -99,3 +99,32 @@ body{
     .btn-prefight:hover{
         background-color: #5867D2;
     }
+
+#enemic{
+     width:1400px;
+   height:750px;
+   margin:auto;
+   cursor:pointer;
+   background-color:brown;
+}
+    .imgEnemy{
+        width: 750px;
+        float: left;
+    }
+    .titolEnemy{
+        width: 80%;
+           margin: 5% auto;
+           color: rgb(255,140,0);
+           text-align: center;
+           border: gold 7px inset;
+           background-color: #690000;
+           font-size: 30px;
+    }
+    .textEnemy{
+            height: 750px;
+                font-size: 30px;
+                text-align: left;
+                float: right;
+                width: 650px;
+                margin: auto;
+    }

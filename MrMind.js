@@ -34,7 +34,6 @@ function crearRandom(){
     return ArrayTemp;
 }
 function checkCamps(fila){
-<<<<<<< HEAD
     //creem un array on guardarem els valors que ens han introduit en la fila corresponent (parametre funció fila)
     var ArraySend = new Array();
     //variable on guardarem cada input number sencer per despres canviar-li l'estil i comprovar el seu valor
@@ -69,32 +68,6 @@ function checkCamps(fila){
     }else{
         return false;
     }
-=======
-  var ArraySend = new Array();
-  var inputSend;
-  var contadorErrors=0;
-  document.getElementById("spanError"+fila).innerHTML = "";
-  for (var i = 0; i < 5; i++) {
-      inputSend = document.getElementsByName("inputSend"+fila)[i];
-      inputSend.style = "";
-      if( (inputSend.value!="") && (inputSend.value>0) && (inputSend.value<10) ){
-        ArraySend[i] = inputSend.value;
-        inputSend.disabled= true;
-      }else{
-        document.getElementById("spanError"+fila).innerHTML += "Has d'introduir el camp "+(i+1)+" o no esta entre 1 i 9 ";
-        inputSend.style = "border:2px solid red;";
-        contadorErrors++;
-        //ArraySend = null;
-        //return false;
-      }
-  }
-  if(contadorErrors==0){
-      document.getElementById("btnconfirmar"+fila).disabled = true;
-      return ArraySend;
-  }else{
-      return false;
-  }
->>>>>>> e15f692729c4d39bc211838664f4ccf25a8bde05
 }
 function iguals(fila) {
     var contadorOk = 0;

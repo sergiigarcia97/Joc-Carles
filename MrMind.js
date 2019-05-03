@@ -39,7 +39,7 @@ function checkCamps(fila){
         ArraySend[i] = inputSend.value;
         inputSend.disabled= true;
       }else{
-        document.getElementById("text"+fila).innerHTML += "Has d'introduir el camp "+(i+1)+" o no esta entre 1 i 9 ";
+        document.getElementById("spanError"+fila).innerHTML += "Has d'introduir el camp "+(i+1)+" o no esta entre 1 i 9 ";
         inputSend.style = "border:2px solid red;";
         contadorErrors++;
         //ArraySend = null;

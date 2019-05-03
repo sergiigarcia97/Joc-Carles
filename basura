@@ -1,0 +1,30 @@
+function iep1() {
+    document.getElementById("nia").innerHTML = '<p>Has introduit el numero:</p>' ;
+}
+function iep2() {
+    document.getElementById("nia2").innerHTML = "HAS GASTAT DOS INTENTS";
+}
+function iep3() {
+    document.getElementById("nia3").innerHTML = "HAS GASTAT TRES INTENTS";
+}
+function iep4() {
+    document.getElementById("nia4").innerHTML = "HAS GASTAT QUATRE INTENTS";
+}
+function iep5() {
+    document.getElementById("nia5").innerHTML = "HAS GASTAT CINC INTENTS";
+}
+function iep6() {
+    document.getElementById("nia6").innerHTML = "HAS GASTAT SIS INTENTS";
+}
+function iep7() {
+    document.getElementById("nia7").innerHTML = "HAS GASTAT SET INTENTS";
+}
+function iep8() {
+    document.getElementById("nia8").innerHTML = "HAS GASTAT VUIT INTENTS";
+}
+function iep9() {
+    document.getElementById("nia9").innerHTML = "HAS GASTAT NOU INTENTS";
+}
+function iep10() {
+    document.getElementById("nia10").innerHTML = "HAS GASTAT DEU INTENTS";
+}

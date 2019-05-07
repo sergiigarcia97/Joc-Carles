@@ -104,6 +104,7 @@ function iguals(fila) {
                   document.getElementById( "containerPrincipal" ).style.display = " none ";
                   //has guanyat
                   document.getElementById( "btnReady" ).click = startConfetti() ;
+                  document.getElementById( "missatgeFinal" ).innerHTML = (" <h1 style='text-align:center;'> Has guanyat! </h1>");
 
               } else if ( (fila==9) && (contadorPosicio<5) ) {
                   document.getElementById( "containerPrincipal" ).style.display = " none ";

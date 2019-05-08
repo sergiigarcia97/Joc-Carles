@@ -9,7 +9,7 @@ function crearCamps() {
         document.getElementById( "containerPrincipal" ).innerHTML+=
             "<div name='nia"+i+"'>"+
                 "<label for='inputSend"+i+"'>Quin numero és?</label>"+
-                    "<input type='number' onfocusout='' min='1' max='9' name='inputSend"+i+"'>"+
+                    "<input type='number' onfocusout='patata()' min='1' max='9' name='inputSend"+i+"'>"+
                     "<input type='number' onfocusout='' min='1' max='9' name='inputSend"+i+"'>"+
                     "<input type='number' onfocusout='' min='1' max='9' name='inputSend"+i+"'>"+
                     "<input type='number' onfocusout='' min='1' max='9' name='inputSend"+i+"'>"+
@@ -20,7 +20,7 @@ function crearCamps() {
     }
     //guardem els numeros aleatoris y amaguem el botó de començar (no cal fer return perquè és global)
     ArrayRandom = crearRandom();
-    document.getElementById( "btnReady" ).style.display = " none ";
+    document.getElementById( "btnReady" ).style.display = " none " ;
 }
 function crearRandom() {
     var min = 1;

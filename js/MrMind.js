@@ -32,6 +32,7 @@ function crearCamps() {
     //guardem els numeros aleatoris y amaguem el botó de començar (no cal fer return perquè és global)
     ArrayRandom = crearRandom();
     document.getElementById( "btnReady" ).style.display = " none " ;
+    document.getElementById("instruccions").style.display = " none ";
 }
 function crearRandom() {
     var min = 1;
@@ -124,11 +125,15 @@ function iguals(fila) {
                 "</div>"+
               "</div>"+
               "</div>";
-              $('.toast'+fila).toast('show');
+              if(document.getElementsByClassName('.toast'+fila)[0]){
+                document.getElementsByClassName('.toast'+fila)[0].toast('show');
+              }
+
 
               if ( contadorPosicio==5 ) {
                   //document.getElementById( "containerPrincipal" ).style.display = " none ";
                   //has guanyat
+                  document.getElementById("containerPrincipal").style.display = " none ";
                   document.getElementById( "btnReady" ).click = startConfetti() ;
                   document.getElementById( "missatgeFinal" ).innerHTML = (" <h1 style='text-align:center;'> Has guanyat! </h1>");
 

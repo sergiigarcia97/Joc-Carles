@@ -7,20 +7,32 @@ function crearCamps() {
     for (var i = 0; i < 10; i++) {
         // i = número de fila (pregunta 0,1,2...)
         document.getElementById( "containerPrincipal" ).innerHTML+=
-            "<div name='nia"+i+"'>"+
-                "<label for='inputSend"+i+"'>Quin numero és?</label>"+
-                    "<input type='number' onfocusout='' min='1' max='9' name='inputSend"+i+"'>"+
-                    "<input type='number' onfocusout='' min='1' max='9' name='inputSend"+i+"'>"+
-                    "<input type='number' onfocusout='' min='1' max='9' name='inputSend"+i+"'>"+
-                    "<input type='number' onfocusout='' min='1' max='9' name='inputSend"+i+"'>"+
-                    "<input type='number' onfocusout='' min='1' max='9' name='inputSend"+i+"'>"+
-                "<button id='btnConfirmar"+i+"' onclick='iguals("+i+")'>Confirmar</button>"+
-                "<span id='spanMissatge"+i+"'></span>"+
-            "</div>";
+            "<div class='row'>"+
+                " <div class='col-md-3'></div>"+
+                " <div id='contingutPrincipal' class='col-md-6'>"+
+                      "<div class='row' name='nia"+i+"'>"+
+                            "<div class='col-md-4'>"+
+                                  "<label for='inputSend"+i+"'>What number i'm thinking about?</label>"+
+                                  "<span id='spanMissatge"+i+"'></span>"+
+                            "</div>"+
+                            "<div class='col-md-8'>"+
+                                      "<input type='number' onfocusout='' min='1' max='9' class='form-control' name='inputSend"+i+"'>"+
+                                      "<input type='number' onfocusout='' min='1' max='9' class='form-control' name='inputSend"+i+"'>"+
+                                      "<input type='number' onfocusout='' min='1' max='9' class='form-control' name='inputSend"+i+"'>"+
+                                      "<input type='number' onfocusout='' min='1' max='9' class='form-control' name='inputSend"+i+"'>"+
+                                      "<input type='number' onfocusout='' min='1' max='9' class='form-control' name='inputSend"+i+"'>"+
+                                  "<button id='btnConfirmar"+i+"' class='btn btn-block btn-primary' onclick='iguals("+i+")'>Confirm</button>"+
+                            "</div>"+
+                      "</div>"+
+                "</div>"+
+                "  <div id='mostrarMissatge"+i+"' class='col-md-3'></div>"+
+          "  </div>"
+            ;
     }
     //guardem els numeros aleatoris y amaguem el botó de començar (no cal fer return perquè és global)
     ArrayRandom = crearRandom();
-    document.getElementById( "btnReady" ).style.display = " none ";
+    document.getElementById( "btnReady" ).style.display = " none " ;
+    document.getElementById("instruccions").style.display = " none ";
 }
 function crearRandom() {
     var min = 1;
@@ -57,7 +69,7 @@ function checkCamps(fila) {
             inputSend.disabled= true;
         }else{
             //mostrem missatge error per cada possible camp erroni
-            document.getElementById( "spanMissatge" + fila ).innerHTML += "Has d'introduir el camp " +(i+1)+ " o no esta entre 1 i 9 !";
+            document.getElementById( "spanMissatge" + fila ).innerHTML += "You have to introduce the box number " +(i+1)+ " or it's not between 1 and 9 !";
             inputSend.style = "border:2px solid red;";
             contadorErrors++;
         }
@@ -99,20 +111,43 @@ function iguals(fila) {
                   }
               }
               //mostrem quants acerts ha fet l'usuari
-              document.getElementById( "spanMissatge" + fila ).innerHTML = ("Hi ha " + contadorValor + " valors existents i hi ha " + contadorPosicio + " en la seva posició!");
+              document.getElementById( "mostrarMissatge"+fila).innerHTML +=
+              "<div aria-live='polite' aria-atomic='true' style='position: relative; min-height: 200px;'>"+
+              "<div class='toast"+fila+"' style='position: absolute; top: 0; right: 0;' data-autohide='false'>"+
+              "  <div class='toast-header'>"+
+                "  <strong class='mr-auto'>Fila : "+(fila+1)+"</strong>"+
+                "  <button type='button' class='ml-2 mb-1 close' data-dismiss='toast' aria-label='Close'>"+
+                  "  <span aria-hidden='true'>&times;</span>"+
+                  "</button>"+
+              "  </div>"+
+                "<div class='toast-body'>"+
+                    "There is/are " + contadorValor + " existent values and " + contadorPosicio + " in their position!"+
+                "</div>"+
+              "</div>"+
+              "</div>";
+              if(document.getElementsByClassName('.toast'+fila)[0]){
+                document.getElementsByClassName('.toast'+fila)[0].toast('show');
+              }
               if ( contadorPosicio==5 ) {
-                  document.getElementById( "containerPrincipal" ).style.display = " none ";
+                  //document.getElementById( "containerPrincipal" ).style.display = " none ";
                   //has guanyat
+                  document.getElementById( "containerPrincipal" ).style.display = " none ";
                   document.getElementById( "btnReady" ).click = startConfetti() ;
-                  document.getElementById( "missatgeFinal" ).innerHTML = (" <h1 style='text-align:center;'> Has guanyat! </h1>");
+                  document.getElementById( "missatgeFinal" ).innerHTML = (" <h1 style='text-align:center;'> Victory! </h1>");
+                  document.getElementById( "missatgeFinal" ).innerHTML =+ (" <img src='img/200w.gif' class='marciano'></img>");
+                  document.getElementById( "musicaInici" ).pause();
+                  document.getElementById( "audios" ).innerHTML = ("<audio src='img/cumbia.mp3' autoplay loop id='musicaVictoria'></audio>")
 
               } else if ( (fila==9) && (contadorPosicio<5) ) {
                   document.getElementById( "containerPrincipal" ).style.display = " none ";
                   //has perdut
-                  document.getElementById( "missatgeFinal" ).innerHTML = (" has perdut! ");
+                  document.getElementById( "missatgeFinal" ).innerHTML = (" You lose! ");
+                  document.getElementById( "missatgeFinal" ).innerHTML == (" <img src='img/perroLlorando.gif' class='perro'></img>");
+                  document.getElementById( "musicaInici" ).pause();
+                  document.getElementById( "audios" ).innerHTML = ("<audio src='img/sad.mp3' autoplay loop id='musicaDerrota'></audio>")
               }
         }
     } else if ( contadorFiles<fila ) {
-        alert( " t'has saltat alguna fila! " );
+        alert( " You have left a line " );
     }
 }

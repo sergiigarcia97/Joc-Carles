@@ -128,10 +128,12 @@ function iguals(fila) {
               if(document.getElementsByClassName('.toast'+fila)[0]){
                 document.getElementsByClassName('.toast'+fila)[0].toast('show');
               }
+
+
               if ( contadorPosicio==5 ) {
                   //document.getElementById( "containerPrincipal" ).style.display = " none ";
                   //has guanyat
-                  document.getElementById( "containerPrincipal" ).style.display = " none ";
+                  document.getElementById("containerPrincipal").style.display = " none ";
                   document.getElementById( "btnReady" ).click = startConfetti() ;
                   document.getElementById( "missatgeFinal" ).innerHTML = (" <h1 style='text-align:center;'> Victory! </h1>");
                   document.getElementById( "missatgeFinal" ).innerHTML =+ (" <img src='img/200w.gif' class='marciano'></img>");

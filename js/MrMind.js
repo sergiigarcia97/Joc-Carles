@@ -4,7 +4,7 @@ var ArrayAnterior = new Array();
 //declarem l'array d'aleatoris aquí per poder accedir des de totes les funcions (variable global)
 var ArrayRandom = new Array();
 function crearCamps() {
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 20; i++) {
         // i = número de fila (pregunta 0,1,2...)
         document.getElementById( "containerPrincipal" ).innerHTML+=
             "<div class='row'>"+
@@ -33,7 +33,32 @@ function crearCamps() {
     ArrayRandom = crearRandom();
     document.getElementById( "btnReady" ).style.display = " none " ;
     document.getElementById("instruccions").style.display = " none ";
+    
+    limitarMidaText();
+    
 }
+
+function limitarMidaText(){
+    //getElementsByTagName selecciona TOTS els elements del tipus indicat que hi hagi a la pàgina
+    let inputs = document.getElementsByTagName("input");
+    /*Recorrem tots els inputs per tal de fer que capturin l'event keyDown*/
+    for(var inputIndex in inputs){
+        /*addEventListener fa que el control escolti el teclat a l'espera d'un keyDown (en aquest cas)*/
+        (inputs[inputIndex]).addEventListener("keydown", function(event){
+            //Agafem el primer caracter del codi de la tecla que estem picant i si
+            //comença per F no fem res (F1-F12)
+            if(event.code.substr(0,1)=='F') return;
+            //Si ja hi ha escrita alguna cosa
+            if(event.target.value.length>=1){
+                //preventDefault() Evita que faci el que hagi de fer, en aquest cas deixar escriure
+                event.preventDefault();
+            }
+        });
+        
+    }
+}
+
+
 function crearRandom() {
     var min = 1;
     var max = 10;
@@ -134,17 +159,16 @@ function iguals(fila) {
                   //document.getElementById( "containerPrincipal" ).style.display = " none ";
                   //has guanyat
                   document.getElementById("containerPrincipal").style.display = " none ";
-                  document.getElementById( "btnReady" ).click = startConfetti() ;
-                  document.getElementById( "missatgeFinal" ).innerHTML = (" <h1 style='text-align:center;'> Victory! </h1>");
-                  document.getElementById( "missatgeFinal" ).innerHTML =+ (" <img src='img/200w.gif' class='marciano'></img>");
+                  document.getElementById( "missatgeFinal" ).innerHTML = (" <h1 style='text-align:center;'> Victory! </h1> <img src='img/200w.gif' class='marciano' style=' display: block; margin-left: auto; margin-right: auto;'></img>");
+                //  document.getElementById( "missatgeFinal" ).innerHTML =+ (" ");
                   document.getElementById( "musicaInici" ).pause();
                   document.getElementById( "audios" ).innerHTML = ("<audio src='img/cumbia.mp3' autoplay loop id='musicaVictoria'></audio>")
 
               } else if ( (fila==9) && (contadorPosicio<5) ) {
                   document.getElementById( "containerPrincipal" ).style.display = " none ";
                   //has perdut
-                  document.getElementById( "missatgeFinal" ).innerHTML = (" You lose! ");
-                  document.getElementById( "missatgeFinal" ).innerHTML == (" <img src='img/perroLlorando.gif' class='perro'></img>");
+                  document.getElementById( "missatgeFinal" ).innerHTML = (" <h1 style='text-align:center;'> You lose! </h1>  <img src='img/perroLlorando.gif' class='perro'></img>");
+         //         document.getElementById( "missatgeFinal" ).innerHTML == (" <img src='img/perroLlorando.gif' class='perro'></img>");
                   document.getElementById( "musicaInici" ).pause();
                   document.getElementById( "audios" ).innerHTML = ("<audio src='img/sad.mp3' autoplay loop id='musicaDerrota'></audio>")
               }

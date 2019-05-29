@@ -1,10 +1,11 @@
+
 var contadorFiles = 0;
 //declarem un array per comprovar en la funcio checkexistent si el valor ja sha sumat anteriorment
 var ArrayAnterior = new Array();
 //declarem l'array d'aleatoris aquí per poder accedir des de totes les funcions (variable global)
 var ArrayRandom = new Array();
 function crearCamps() {
-    for (var i = 0; i < 20; i++) {
+    for (var i = 0; i < 10; i++) {
         // i = número de fila (pregunta 0,1,2...)
         document.getElementById( "containerPrincipal" ).innerHTML+=
             "<div class='row'>"+
@@ -33,31 +34,34 @@ function crearCamps() {
     ArrayRandom = crearRandom();
     document.getElementById( "btnReady" ).style.display = " none " ;
     document.getElementById("instruccions").style.display = " none ";
-    
+
     limitarMidaText();
-    
+
 }
 
 function limitarMidaText(){
     //getElementsByTagName selecciona TOTS els elements del tipus indicat que hi hagi a la pàgina
     let inputs = document.getElementsByTagName("input");
-    /*Recorrem tots els inputs per tal de fer que capturin l'event keyDown*/
+    //Recorrem tots els inputs per tal de fer que capturin l'event keyDown
     for(var inputIndex in inputs){
-        /*addEventListener fa que el control escolti el teclat a l'espera d'un keyDown (en aquest cas)*/
+        //addEventListener fa que el control escolti el teclat a l'espera d'un keyDown (en aquest cas)
         (inputs[inputIndex]).addEventListener("keydown", function(event){
             //Agafem el primer caracter del codi de la tecla que estem picant i si
             //comença per F no fem res (F1-F12)
             if(event.code.substr(0,1)=='F') return;
+            if(event.code=='Backspace') return;
+            if(event.code=='Tab') return;
+            if(event.code=='Delete') return;
             //Si ja hi ha escrita alguna cosa
-            if(event.target.value.length>=1){
+            if(isNaN(event.key)  ||  event.target.value.length>=1){
                 //preventDefault() Evita que faci el que hagi de fer, en aquest cas deixar escriure
                 event.preventDefault();
             }
         });
-        
     }
 }
 
+// Backspace, Delete, Tab
 
 function crearRandom() {
     var min = 1;
